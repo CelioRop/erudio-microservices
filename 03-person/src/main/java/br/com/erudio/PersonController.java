@@ -25,14 +25,20 @@ public class PersonController {
 	public List<Person> findAll() {		
 		return services.findAll();
 	}	
+
+	
 	
 	@RequestMapping(value="/{id}",
 			method=RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public Person findById(@PathVariable("id") String id) {		
 		return services.findById(id);
-	}		
+	}
 
+	@RequestMapping(value="/teste")
+	public String test(String teste) {		
+		return "<h3><B>teste </B></h3>";
+	}	
 	
 	@RequestMapping(method=RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE,
